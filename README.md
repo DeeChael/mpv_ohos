@@ -69,3 +69,15 @@
 ```shell
 meson arm64-v8a-build --cross-file arm64-v8a-cross-file.txt --prefix=/data/ohos/tpc_c_cplusplus/lycium/usr/mpv/arm64-v8a -Dlibmpv=true -Dalsa=enabled -Dpulse=enabled -Duchardet=enabled -Dzlib=enabled -Diconv=enabled -Dvulkan=enabled > arm64-v8a-build/build.log 2>&1
 ```
+## 编译库
+**此节下的内容中，库将会按照主要依赖库分类：libmpv 依赖库，libplacebo 依赖库，FFmpeg 依赖库。至于这些库的依赖库所依赖的库将不会进行介绍。**
+### mpv_ohos 依赖库
+| 库名 | 开源协议 | 地址（有 tpc_c_cplusplus 优先选其中的地址）| 推荐版本 | 介绍 |
+| ---- | -------- | ----------------------------------------- | ------- | ----- |
+| libmpv | GPL-2.0, LGPL-2.1 | https://github.com/mpv-player/mpv | v0.39.0 | 我们最终需要的库，有了这个库我们只需要设计好 UI 即可，不必费心于解码播放等方面 |
+### libmpv 依赖库
+| 库名 | 开源协议 | 地址（有 tpc_c_cplusplus 优先选其中的地址）| 推荐版本 | 介绍 |
+| ---- | -------- | ----------------------------------------- | ------- | ----- |
+| FFmpeg | GPL-2.0, GPL-3.0, LGPL-3.0 | https://git.ffmpeg.org/ffmpeg.git | v7.1 | 主要功能为负责音视频解码，还有其他强大的功能，不做介绍 |
+| libplacebo | LGPL-2.0 | https://code.videolan.org/videolan/libplacebo | ? | 主要为 AV1 编码、HDR、杜比视野等功能提供支持 |
+| libass | ISC | https://github.com/libass/libass | 0.17.3 | 提供 .ass 字幕文件的支持 |
