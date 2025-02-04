@@ -37,7 +37,7 @@
 在 `3rdparty` 目录里执行 `git clone https://github.com/KhronosGroup/Vulkan-Headers` 及 `git clone https://github.com/fastfloat/fast_float` \
 执行 `pip3 install jinja2` 以安装 jinja2 环境，编译环境需要 jinja2 才能正常进行。
 #### b. 修改 meson.build 以保证正常编译
-请直接参考本仓库 `libplacebo` 目录下的 `meson.build.patch` 和 `src/meson.build.patch` 进行修改。
+请直接参考本仓库 `libplacebo` 目录下的 `src/meson.build.patch` 进行修改。
 #### c. 准备交叉编译文件
 建议直接使用本仓库 `libplacebo` 目录下的 `arm64-v8a-cross-file.txt`，并对其中的目录位置按照在容器中的绝对位置进行相应的修改，然后放置在拉取下来的项目目录中。 \
 其中你可以注意到有些目录是指向 SDK 中的一些目录的，是为了导入 SDK 中在 [OpenHarmony](https://www.openharmony.cn) 上的标准库及 [Vulkan](https://www.vulkan.org) 库。
