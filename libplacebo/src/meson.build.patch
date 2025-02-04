@@ -1,0 +1,31 @@
+Subject: [PATCH] remove unnecessary libatomic check
+---
+Index: src/meson.build
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/meson.build b/src/meson.build
+--- a/src/meson.build	(revision 056b852018db04aa2ebc0982e27713afcea8106b)
++++ b/src/meson.build	(date 1738643625283)
+@@ -37,19 +37,7 @@
+   add_project_arguments(['-D__CRT__NO_INLINE'], language: ['c', 'cpp'])
+ endif
+ 
+-# Work around missing atomics on some (obscure) platforms
+-atomic_test = '''
+-#include <stdatomic.h>
+-#include <stdint.h>
+-int main(void) {
+-  _Atomic uint32_t x32;
+-  atomic_init(&x32, 0);
+-}'''
+-
+-if not cc.links(atomic_test)
+-  build_deps += cc.find_library('atomic')
+-endif
+-
++# 删去不必要的 atomic 检测，因为这个步骤会导致编译失败，同时 OpenHarmony 的基础库中有 atomic，不需做额外检测
+ 
+ ### Common source files
+ headers = [
