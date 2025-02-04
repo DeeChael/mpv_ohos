@@ -7,7 +7,8 @@
 
 ## 步骤
 **本环节所有工作都默认在 [Ubuntu](https://ubuntu.com) 系统环境下进行** \
-**本环节所有编译产物都只讨论 `arm64-v8a` 架构的产物**
+**本环节所有编译产物都只讨论 `arm64-v8a` 架构的产物** \
+**请确保过程中你始终拥有访问国际互联网的能力**
 
 ### 1. 环境搭建
 我是建议在 [docker](https://www.docker.com) 中进行所有的操作的，将 [Lycium](https://gitee.com/han_jin_fei/lycium) 仓库拉取下来后，在 `docker` 文件夹里按照 README 的指引创建 [docker](https://www.docker.com) 容器即可。 \
