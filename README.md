@@ -5,6 +5,15 @@
 不过我觉得通过我的编译过程，能为各位想尝试编译的大佬们提供一些思路。 \
 从基础库到 [mpv](https://github.com/mpv-player/mpv) 编译的脚本我也在编写了，不过要保证成功实在比较困难，所以需要花一点时间。
 
+## 相关技术
+### C & C++
+[mpv](https://github.com/mpv-player/mpv) 使用的大部分相关技术都与 c 与 c++ 有关，在不需要对代码进行修补的情况下，你唯一需要了解的只有（交叉）编译相关的内容，建议先了解 [cmake](https://cmake.org)，[make](https://www.gnu.org/software/make/)，[configure](https://en.wikipedia.org/wiki/Configure_script) 及 [meson](https://mesonbuild.com) 等工具。
+
+### Rust
+[libplacebo](https://code.videolan.org/videolan/libplacebo) 支持 [杜比视野](https://www.dolby.com/technologies/dolby-vision/)，不过需要使用 [libdovi](https://github.com/quietvoid/dovi_tool) 才能支持。 \
+由于 [libdovi](https://github.com/quietvoid/dovi_tool) 是在 [Rust](https://www.rust-lang.org) 下编写的，所以还需了解 [Rust](https://www.rust-lang.org) 的（交叉）编译的内容。 \
+好在 [Rust](https://www.rust-lang.org) 官方的文档十分的全面，可以在 [这里](https://rust-lang.github.io/rustup/cross-compilation.html) 找到交叉编译的相关内容；且社区对 [OpenHarmony](https://www.openharmony.cn) 的支持也很积极，可以在 [这里](https://doc.rust-lang.org/rustc/platform-support/openharmony.html) 找到支持 [OpenHarmony](https://www.openharmony.cn) 的交叉编译工具链。
+
 ## 步骤
 **本环节所有工作都默认在 [Ubuntu](https://ubuntu.com) 系统环境下进行** \
 **本环节所有编译产物都只讨论 `arm64-v8a` 架构的产物** \
